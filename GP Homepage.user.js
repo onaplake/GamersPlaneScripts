@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Format bookmarked games section
-// @author       You
+// @author       Adam
 // @match        https://gamersplane.com
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gamersplane.com
 // @grant        GM_addStyle
