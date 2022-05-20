@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -36,10 +36,11 @@ overflow:hidden;
 margin: 0px;
 padding: 10px;
 border: 0;
-
-font-size: 11pt;
-line-height: 14pt;
+font-size: 13px;
+line-height: 1.3em;
 tab-size: 2;
+font-family: 'Lucida Grande',Verdana,Arial,Sans-Serif;
+text-size-adjust:none;
 }
 .markitUpEditorContainer .markItUpEditor{
 position: relative;
@@ -67,10 +68,60 @@ body.dark .markitUpEditorContainer .markItUpEditor {
 caret-color: #fff;
 }
 
-/* syntax colouring */
+/************************/
+/* tag syntax colouring */
+/************************/
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag {
 color: #cc6600;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTagi,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTagu,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTags,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTaglinebreak {
+color: blue;
+}
+
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagi,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagu,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTags,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTaglinebreak {
+color:#66f;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Var,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Calc {
+color: red;
+}
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Var,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Calc {
+color: #f55;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTagabilities,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTagf {
+color: green;
+}
+
+
+/**************************/
+/* block syntax colouring */
+/**************************/
+
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocku {
+text-decoration:underline;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocks {
+text-decoration:line-through;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocki {
+font-style:italic;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockb {
@@ -78,10 +129,6 @@ color: blue;
 }
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockb {
 color:#66f;
-}
-
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocki {
-color: #009828;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockquote {
@@ -94,19 +141,6 @@ background-color: #fea;
 
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
 color: #000;
-}
-
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Var,
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Calc {
-color: red;
-}
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Var,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Calc {
-color: #f55;
-}
-
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSTagabilities {
-color: green;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockimg,
@@ -165,6 +199,8 @@ vertical-align:top;
                     text += " ";
                 }
                 text=text.replace(/\[b\](.*?)\[\/b\]/msg,"<span class='miuHSBlock miuHSBlockb'>$&</span>");
+                text=text.replace(/\[u\](.*?)\[\/u\]/msg,"<span class='miuHSBlock miuHSBlocku'>$&</span>");
+                text=text.replace(/\[s\](.*?)\[\/s\]/msg,"<span class='miuHSBlock miuHSBlocks'>$&</span>");
                 text=text.replace(/\[i\](.*?)\[\/i\]/msg,"<span class='miuHSBlock miuHSBlocki'>$&</span>");
                 text=text.replace(/\[quote(?:=\"?([^\"\]]+?)\"?)?\](.*?)\[\/quote\]/msg,"<span class='miuHSBlock miuHSBlockquote'>$&</span>");
                 text=text.replace(/\[img\](.*?)\[\/img\]/msg,"<span class='miuHSBlock miuHSBlockimg'>$&</span>");
@@ -177,6 +213,7 @@ vertical-align:top;
                 text=text.replace(/\[npc=\"?(.*?)\"?\](.*?)\[\/npc\]*/msg,"<span class='miuHSBlock miuHSBlocknpc'>$&</span>");
                 text=text.replace(/\[zoommap\="?(.*?)"?\](.*?)\[\/zoommap\]/msg,"<span class='miuHSBlock miuHSBlockzoommap'>$&</span>");
                 text=text.replace(/[\r\n]*\[ooc\](.*?)\[\/ooc\][\r\n]*/msg,"<span class='miuHSBlock miuHSBlockooc'>$&</span>");
+                text=text.replace(/\[f=?"?\s*([^\"\]]*)\s*"?\]/ms,"<span class='miuHSBlock miuHSBlockf'>$&</span>");
 
                 text=text.replace(/\[\/?([^\_\=\]\s]+)[^\]]*\]/gm,"<span class='miuHSTag miuHSTag$1'>$&</span>");
                 text=text.replace(/\[_[\w_]*\$\=[^\]]*\]/g,"<span class='miuHSTag miuHSTag_Calc'>$&</span>");
