@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.22
+// @version      0.23
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -77,6 +77,11 @@ caret-color: #fff;
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag {
 color: #cc6600;
 -webkit-text-stroke-width: 0;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSTableSep {
+color: #cc6600;
+-webkit-text-stroke: 0.5px #cc6600;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
@@ -170,6 +175,34 @@ body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockooc .miuHSTa
 color:#77b;
 }
 
+/*****************************/
+/* colour new editor buttons */
+
+.markItUpHeader>ul>li.miuBtnBold>a::after,
+.markItUpHeader>ul>li.miuBtnItalic>a::after,
+.markItUpHeader>ul>li.miuBtnUnderline>a::after,
+.markItUpHeader>ul>li.miuBtnStrikethrough>a::after,
+.markItUpHeader>ul>li.miuBtnLinebreak>a::after {
+color:blue;
+}
+
+.markItUpHeader>ul>li.miuBtnFormat>a::after{
+color: green;
+}
+
+.markItUpHeader>ul>li.miuBtnTable>a::after,
+.markItUpHeader>ul>li.miuBtnPoll>a::after,
+.markItUpHeader>ul>li.miuBtnColor>a::after,
+.markItUpHeader>ul>li.miuBtnImage>a::after,
+.markItUpHeader>ul>li.miuBtnLink>a::after,
+.markItUpHeader>ul>li.miuBtnQuote>a::after,
+.markItUpHeader>ul>li.miuBtnNote>a::after,
+.markItUpHeader>ul>li.miuBtnCode>a::after,
+.markItUpHeader>ul>li.miuBtnOoc>a::after,
+.markItUpHeader>ul>li.miuBtnSpoiler>a::after {
+color:#c60;
+}
+
 /* not needed with new release */
 .markItUpHeader ul li{
 float:none;
@@ -218,6 +251,7 @@ vertical-align:top;
                 text=text.replace(/\[_[\w_]*\$\=[^\]]*\]/g,"<span class='miuHSTag miuHSTag_Calc'>$&</span>");
                 text=text.replace(/\[_[\w_]*\=[^\]]*\]/g,"<span class='miuHSTag miuHSTag_Var'>$&</span>");
                 text=text.replace(/^[\s]*(#.*)/gm,"<span class='miuHSBlock miuHSBlockAbilityHeading'>$&</span>");
+                text=text.replace(/\[table[^\]]*\](.*)\[\/table\]/gms,function(matches){return matches.replace(/\|/g,'<span class="miuHSTableSep">|</span>');});
 
                 syntaxHighlighter.html(text);
             };
