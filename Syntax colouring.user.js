@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.24
+// @version      0.25
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -140,6 +140,15 @@ color: #888;
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocku {
 text-decoration:underline;
 }
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocki {
+text-decoration: overline dotted #aaa;
+}
+
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocki {
+text-decoration: overline dotted #888;
+}
+
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocks {
 text-decoration:line-through;
