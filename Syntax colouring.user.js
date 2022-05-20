@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.23
+// @version      0.24
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -60,6 +60,11 @@ width: 100%;
 box-sizing: border-box;
 white-space: pre-wrap;
 z-index: 0;
+background-color:#fff;
+}
+
+body.dark .markitUpEditorContainer .markItUpEditorSyntax{
+background-color:#37393f
 }
 
 .markitUpEditorContainer .markItUpEditor {
@@ -154,7 +159,7 @@ color: #000;
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockpoll,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocknpc,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockzoommap{
-background-color:#ddd;
+background-color:#f2f2f2;
 }
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockimg,
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockmap,
