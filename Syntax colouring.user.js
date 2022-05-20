@@ -41,6 +41,8 @@ line-height: 1.3em;
 tab-size: 2;
 font-family: 'Lucida Grande',Verdana,Arial,Sans-Serif;
 text-size-adjust:none;
+letter-spacing:normal;
+word-spacing:normal;
 }
 .markitUpEditorContainer .markItUpEditor{
 position: relative;
