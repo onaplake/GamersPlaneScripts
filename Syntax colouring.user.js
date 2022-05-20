@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.21
+// @version      0.22
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -76,6 +76,7 @@ caret-color: #fff;
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag {
 color: #cc6600;
+-webkit-text-stroke-width: 0;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
@@ -114,14 +115,24 @@ color: green;
 /**************************/
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockb {
-color: blue;
+-webkit-text-stroke: 0.5px #000;
 }
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockb {
-color:#66f;
+-webkit-text-stroke: 0.25px #fff;
 }
 
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockquote {
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockquote,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocknote,
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockprivate {
 color: #888;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocku {
+text-decoration:underline;
+}
+
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocks {
+text-decoration:line-through;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
