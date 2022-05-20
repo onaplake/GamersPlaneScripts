@@ -46,13 +46,13 @@
                                         else if(val%5000==0){
                                             congratulations.push("🥇 You've made "+val+' '+valText+'!');
                                         }
-                                        else if(val%1000==0){
+                                        else if((val%1000==0)&&(val<5000)){
                                             congratulations.push("🏆 You've made "+val+' '+valText+'!');
                                         }
-                                        else if(val%500==0){
+                                        else if(val==500){
                                             congratulations.push("😎 You've made "+val+' '+valText+'!');
                                         }
-                                        else if(val%100==0){
+                                        else if(val==100){
                                             congratulations.push("⭐ You've made "+val+' '+valText+'!');
                                         }
                                     }
