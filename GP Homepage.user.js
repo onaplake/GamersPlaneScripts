@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GP Homepage
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.31
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/GP%20Homepage.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/GP%20Homepage.user.js
 // @description  Format bookmarked games section
