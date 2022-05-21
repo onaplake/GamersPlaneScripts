@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.25
+// @version      0.26
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -89,12 +89,17 @@ color: #cc6600;
 -webkit-text-stroke: 0.5px #cc6600;
 }
 
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTableSep,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag {
+color:#ffeecc;
+}
+
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagi,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagu,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTags,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTaglinebreak {
-color: blue;
+color: #00a;
 }
 
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
@@ -102,7 +107,7 @@ body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagi,
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagu,
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTags,
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTaglinebreak {
-color:#66f;
+color:#ccf;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Var,
@@ -111,12 +116,17 @@ color: red;
 }
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Var,
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag_Calc {
-color: #f55;
+color: #f88;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagabilities,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagf {
 color: green;
+}
+
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagabilities,
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagf {
+color: #cfc;
 }
 
 
@@ -154,31 +164,6 @@ text-decoration: overline dotted #888;
 text-decoration:line-through;
 }
 
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
-background-color: #fea;
-}
-
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
-color: #000;
-}
-
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockimg,
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockmap,
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockurl,
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockpoll,
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocknpc,
-.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockzoommap{
-background-color:#f2f2f2;
-}
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockimg,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockmap,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockurl,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockpoll,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlocknpc,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockzoommap{
-background-color:#242424;
-}
-
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockooc,
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockooc .miuHSTagooc{
 color:#009;
@@ -186,36 +171,17 @@ color:#009;
 
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockooc,
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockooc .miuHSTagooc{
-color:#77b;
+color:#99d;
 }
 
-/*****************************/
-/* colour new editor buttons */
-
-.markItUpHeader>ul>li.miuBtnBold>a::after,
-.markItUpHeader>ul>li.miuBtnItalic>a::after,
-.markItUpHeader>ul>li.miuBtnUnderline>a::after,
-.markItUpHeader>ul>li.miuBtnStrikethrough>a::after,
-.markItUpHeader>ul>li.miuBtnLinebreak>a::after {
-color:blue;
+.markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
+background-color: #fff2cc;
 }
 
-.markItUpHeader>ul>li.miuBtnFormat>a::after{
-color: green;
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
+color: #000;
 }
 
-.markItUpHeader>ul>li.miuBtnTable>a::after,
-.markItUpHeader>ul>li.miuBtnPoll>a::after,
-.markItUpHeader>ul>li.miuBtnColor>a::after,
-.markItUpHeader>ul>li.miuBtnImage>a::after,
-.markItUpHeader>ul>li.miuBtnLink>a::after,
-.markItUpHeader>ul>li.miuBtnQuote>a::after,
-.markItUpHeader>ul>li.miuBtnNote>a::after,
-.markItUpHeader>ul>li.miuBtnCode>a::after,
-.markItUpHeader>ul>li.miuBtnOoc>a::after,
-.markItUpHeader>ul>li.miuBtnSpoiler>a::after {
-color:#c60;
-}
 
 /* not needed with new release */
 .markItUpHeader ul li{
