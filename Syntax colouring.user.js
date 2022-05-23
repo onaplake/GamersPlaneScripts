@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Syntax colouring
 // @namespace    http://tampermonkey.net/
-// @version      0.26
+// @version      0.27
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Syntax%20colouring.user.js
 // @description  Add syntax colouring to Gamers' Plane BBCode entry
@@ -83,15 +83,17 @@ caret-color: #fff;
 color: #cc6600;
 -webkit-text-stroke-width: 0;
 }
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag {
+color:#ffeecc;
+}
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTableSep {
 color: #cc6600;
 -webkit-text-stroke: 0.5px #cc6600;
 }
-
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTableSep,
-body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTag {
-color:#ffeecc;
+body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSTableSep{
+color: #ffeecc;
+-webkit-text-stroke: 0.5px #ffeecc;
 }
 
 .markitUpEditorContainer .markItUpEditorSyntax .miuHSTagb,
@@ -179,7 +181,7 @@ background-color: #fff2cc;
 }
 
 body.dark .markitUpEditorContainer .markItUpEditorSyntax .miuHSBlockAbilityHeading {
-color: #000;
+background-color: #564515;
 }
 
 
