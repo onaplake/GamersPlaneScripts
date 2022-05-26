@@ -5,7 +5,7 @@
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Copy%20DnDBeyond%20Spell%20BBCode.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Copy%20DnDBeyond%20Spell%20BBCode.user.js
 // @description  Copies DnDBeyond to the clipboard for pasting into a character sheet
-// @author       You
+// @author       Adam
 // @match        https://www.dndbeyond.com/spells*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dndbeyond.com
 // @grant        none
