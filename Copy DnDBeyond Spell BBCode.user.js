@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Copy DnDBeyond Spell BBCode
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Copy%20DnDBeyond%20Spell%20BBCode.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Copy%20DnDBeyond%20Spell%20BBCode.user.js
 // @description  Copies DnDBeyond to the clipboard for pasting into a character sheet
-// @author       Adam
+// @author       You
 // @match        https://www.dndbeyond.com/spells*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dndbeyond.com
 // @grant        none
@@ -30,7 +30,7 @@
     };
 
     $('.listing').on('click','.copyGpBBCode',function(ev){
-        var infoBlock=$(this).prev();
+        var infoBlock=$(this).prevAll('.info:first');
         var miType=infoBlock.data('type');
         var miSlug=infoBlock.data('slug');
         $.get( "/"+miType+"/"+miSlug+"/more-info", function( data ) {
