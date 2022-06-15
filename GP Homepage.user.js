@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GP Homepage
 // @namespace    http://tampermonkey.net/
-// @version      0.32
+// @version      0.33
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/GP%20Homepage.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/GP%20Homepage.user.js
 // @description  Format bookmarked games section
@@ -27,8 +27,11 @@
         var pThis=$(this);
         var dt=pThis.data('snoozedt');
         var key=pThis.data('snoozekey');
-        pThis.closest('.tr').toggleClass('snoozed');
-        localStorage.setItem(key,dt);
+        if(pThis.closest('.tr').toggleClass('snoozed').hasClass('snoozed')){
+            localStorage.setItem(key,dt);
+        } else {
+            localStorage.removeItem(key);
+        }
     });
 
     $.ajax({type: 'post',url: API_HOST +'/users/getCurrentUser',xhrFields: {withCredentials: true},data:{},
