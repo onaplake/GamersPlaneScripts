@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Game themes
 // @namespace    http://tampermonkey.net/
-// @version      0.12
+// @version      0.13
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Game%20themes.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Game%20themes.user.js
 // @description  Add styling to character sheets
@@ -9,6 +9,7 @@
 // @match        https://gamersplane.com/characters/custom/*
 // @match        https://gamersplane.com/forums/thread/*
 // @match        https://gamersplane.com/forums/*
+// @match        https://gamersplane.com/games/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gamersplane.com
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -481,7 +482,8 @@ body.dark button.fancyButton:before{
     content: "\\e927";
 }
 
-.ra.forum-root-2:before{
+.ra.forum-root-2:before,
+.ra-d6:before {
     content: "\\eaa2";
 }
 
