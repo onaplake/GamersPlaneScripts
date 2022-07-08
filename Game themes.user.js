@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Character themes
+// @name         Game themes
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Character%20themes.user.js
-// @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Character%20themes.user.js
+// @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Game%20themes.user.js
+// @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Game%20themes.user.js
 // @description  Add styling to character sheets
 // @author       Adam
 // @match        https://gamersplane.com/characters/custom/*
