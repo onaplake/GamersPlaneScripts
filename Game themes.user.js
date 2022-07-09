@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Game themes
 // @namespace    http://tampermonkey.net/
-// @version      0.13
+// @version      0.14
 // @updateURL    https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Game%20themes.user.js
 // @downloadURL  https://github.com/AdamDnd/GamersPlaneScripts/raw/main/Game%20themes.user.js
 // @description  Add styling to character sheets
@@ -48,7 +48,7 @@ h1.customChar,
 .customChar .bbTable.bbTable-htl,
 .customChar .bbTable.bbTableRolls,
 .customChar .bbTable.bbTableStats{
-    background:#F9F3D8 url(https://www.dndbeyond.com/content/1-0-2056-0/skins/waterdeep/images/mon-summary/paper-texture.png);
+    background:#F9F3D8 url(https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg);
 }
 
 .customChar .bbTable.bbTable-ht:before,
@@ -109,7 +109,7 @@ h1.customChar,
 }
 
 .customChar .abilityNotes.notes{
-    background:#F9F3D8 url(https://www.dndbeyond.com/content/1-0-2056-0/skins/waterdeep/images/mon-summary/paper-texture.png);
+    background:#F9F3D8 url(https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg);
     border-style:none;
     padding:.5rem;
     color:#333;
