@@ -1,4 +1,4 @@
-// ==UserScript==
+// ==horror==
 // @name         Game themes
 // @namespace    http://tampermonkey.net/
 // @version      0.14
